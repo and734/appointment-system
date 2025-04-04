@@ -4,8 +4,24 @@ import { useAuth } from '../contexts/AuthContext';
 import './AdminDashboardPage.css'; // Stylesheet
 
 // Helper maps and initial states (keep existing)
-const dayOfWeekMap = { ... };
-const initialRuleFormState = { ... };
+const dayOfWeekMap = {
+    0: 'Sunday',
+    1: 'Monday',
+    2: 'Tuesday',
+    3: 'Wednesday',
+    4: 'Thursday',
+    5: 'Friday',
+    6: 'Saturday'
+};
+
+const initialRuleFormState = {
+    id: null, // To track if editing
+    day_of_week: '1', // Default to Monday
+    start_time: '09:00', // Default start time HH:MM
+    end_time: '17:00', // Default end time HH:MM
+    slot_duration_minutes: '30', // Default duration
+    is_active: true,
+};
 
 // --- Initial state for the block-out form ---
 const initialBlockFormState = {
